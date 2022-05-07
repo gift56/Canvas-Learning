@@ -80,3 +80,37 @@ const ctx = canvas.getContext('2d');
 // ctx.quadraticCurveTo(125, 25, 75, 25);
 
 // ctx.stroke();
+
+// Animation 1
+
+const Circle = {
+    x: 200,
+    y: 200,
+    size: 30,
+    dx: 5,
+    dy: 4
+}
+
+const drawCircle = () => {
+    ctx.beginPath();
+    ctx.arc(Circle.x, Circle.y, Circle.size, 0, Math.PI * 2);
+    ctx.fillStyle = 'orange';
+    ctx.fill();
+}
+const Update = () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawCircle();
+
+    Circle.x += Circle.dx;
+    Circle.y += Circle.dy;
+
+    if (Circle.x + Circle.size > canvas.width || Circle.x - Circle.size < 0) {
+        Circle.dx *= -1;
+    }
+
+    
+
+    requestAnimationFrame(Update);
+}
+
+Update();
