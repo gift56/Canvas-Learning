@@ -12,3 +12,6 @@ ctx.fillRect(200, 20, 150, 100);
 ctx.lineWidth = 5;
 ctx.strokeStyle = 'red';
 ctx.strokeRect(100, 150, 150, 100);
+
+//ClearRect
+ctx.clearRect(25, 25, 140, 90); 
