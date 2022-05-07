@@ -52,24 +52,31 @@ const ctx = canvas.getContext('2d');
 // ctx.fill();
 
 // Arc (circles)
-ctx.beginPath();
-const CenterX = canvas.width / 2;
-const CenterY = canvas.height / 2;
+// ctx.beginPath();
+// const CenterX = canvas.width / 2;
+// const CenterY = canvas.height / 2;
 
-// Face Drawing
+// ctx.arc(CenterX, CenterY, 220, 0, Math.PI * 2);
 
-ctx.arc(CenterX, CenterY, 220, 0, Math.PI * 2);
+// ctx.moveTo(CenterX + 100, CenterY);
 
-ctx.moveTo(CenterX + 100, CenterY);
+// ctx.arc(CenterX, CenterY, 100, 0, Math.PI, false);
 
-ctx.arc(CenterX, CenterY, 100, 0, Math.PI, false);
+// ctx.moveTo(CenterX - 60, CenterY - 80);
 
-ctx.moveTo(CenterX - 60, CenterY - 80);
+// ctx.arc(CenterX - 80, CenterY - 80, 20, 0, Math.PI * 2);
 
-ctx.arc(CenterX - 80, CenterY - 80, 20, 0, Math.PI * 2);
+// ctx.moveTo(CenterX + 100, CenterY - 80);
 
-ctx.moveTo(CenterX + 100, CenterY - 80);
+// ctx.arc(CenterX + 80, CenterY - 80, 20, 0, Math.PI * 2);
 
-ctx.arc(CenterX + 80, CenterY - 80, 20, 0, Math.PI * 2)
 
-ctx.stroke();
+// ctx.moveTo(75, 25);
+// ctx.quadraticCurveTo(25, 25, 25, 62.5);
+// ctx.quadraticCurveTo(25, 100, 50, 100);
+// ctx.quadraticCurveTo(50, 120, 30, 125);
+// ctx.quadraticCurveTo(60, 120, 65, 100);
+// ctx.quadraticCurveTo(125, 100, 125, 62.5);
+// ctx.quadraticCurveTo(125, 25, 75, 25);
+
+// ctx.stroke();
