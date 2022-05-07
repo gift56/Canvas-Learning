@@ -13,5 +13,9 @@ ctx.lineWidth = 5;
 ctx.strokeStyle = 'red';
 ctx.strokeRect(100, 150, 150, 100);
 
-//ClearRect
-ctx.clearRect(25, 25, 140, 90); 
+//ClearRect()
+ctx.clearRect(25, 25, 140, 90);
+
+// Filltext()
+ctx.font = '30px Arial';
+ctx.fillText('Hello World', 400, 50,)
