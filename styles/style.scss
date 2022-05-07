@@ -1,0 +1,8 @@
+@import "./module/reset";
+@import "./module/varible";
+
+#canvas{
+    background-color: $graywhite;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
