@@ -18,4 +18,10 @@ ctx.clearRect(25, 25, 140, 90);
 
 // Filltext()
 ctx.font = '30px Arial';
-ctx.fillText('Hello World', 400, 50,)
+ctx.fillStyle = 'purple';
+ctx.fillText('Hello World', 400, 50,);
+
+// Stroketext()
+ctx.lineWidth = 1;
+ctx.strokeStyle = 'Purple';
+ctx.strokeText('Hello World', 400, 100);
