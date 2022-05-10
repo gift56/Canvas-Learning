@@ -97,6 +97,13 @@ const drawCircle = () => {
     ctx.fillStyle = 'orange';
     ctx.fill();
 }
+
+const drawCircle2 = () => {
+    ctx.beginPath();
+    ctx.arc(Circle.x, Circle.y, Circle.size, 0, Math.PI * 2);
+    ctx.fillStyle = 'red';
+    ctx.fill();
+}
 const Update = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawCircle();
@@ -108,9 +115,31 @@ const Update = () => {
         Circle.dx *= -1;
     }
 
-    
+
+    if (Circle.y + Circle.size > canvas.height || Circle.y - Circle.size < 0) {
+        Circle.dy *= -1;
+    }
+
+    requestAnimationFrame(Update);
+}
+const Updat2 = () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawCircle2();;
+
+    Circle.x += Circle.dx;
+    Circle.y += Circle.dy;
+
+    if (Circle.x + Circle.size > canvas.width || Circle.x - Circle.size < 0) {
+        Circle.dx *= -1;
+    }
+
+
+    if (Circle.y + Circle.size > canvas.height || Circle.y - Circle.size < 0) {
+        Circle.dy *= -1;
+    }
 
     requestAnimationFrame(Update);
 }
 
 Update();
+Updat2();
