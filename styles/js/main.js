@@ -134,8 +134,79 @@ const drawPlayer = () => {
     ctx.drawImage(playerImg, player.x, player.y, player.w, player.h);
 }
 
-const Update = () => {
-    drawPlayer();
+const clear = () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 };
 
+const newPostion = () => {
+    player.x += player.dx;
+    player.y += player.dy;
+
+    detectWalls();
+};
+
+const detectWalls = () => {
+    if (player.x < 0) {
+        player.x = 0;
+    }
+    else if (player.x + player.w > canvas.width) {
+        player.x = canvas.width - player.w;
+    }
+
+    if (player.y < 0) {
+        player.y = 0;
+    }
+    else if (player.y + player.h > canvas.height) {
+        player.y = canvas.height - player.h;
+    }
+};
+
+const Update = () => {
+    clear();
+
+    drawPlayer();
+
+    newPostion();
+
+    requestAnimationFrame(Update);
+};
+
+const moveUp = () => {
+    player.dy = -player.speed;
+}
+const moveDown = () => {
+    player.dy = player.speed;
+}
+const moveRight = () => {
+    player.dx = player.speed;
+}
+const moveLeft = () => {
+    player.dx = -player.speed;
+}
+
+const keyDown = (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'Right') {
+        moveRight();
+    }
+    else if (e.key === 'ArrowLeft' || e.key === 'Left') {
+        moveLeft();
+    }
+    else if (e.key === 'ArrowUp' || e.key === 'Up') {
+        moveUp();
+    }
+    else if (e.key === 'ArrowDown' || e.key === 'Down') {
+        moveDown();
+    }
+}
+
+const keyUp = (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'Right' || e.key === 'ArrowLeft' || e.key === 'Left' || e.key === 'ArrowUp' || e.key === 'Up' || e.key === 'ArrowDown' || e.key === 'Down') {
+        player.dx = 0;
+        player.dy = 0;
+    }
+}
+
 Update();
+
+document.addEventListener("keydown", keyDown);
+document.addEventListener("keyup", keyUp);
