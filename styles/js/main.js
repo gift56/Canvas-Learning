@@ -119,6 +119,7 @@ const ctx = canvas.getContext('2d');
 // Update();
 
 // Animation 2 Character movement
+const playerImg = document.getElementById("source");
 
 const player = {
     w: 50,
@@ -126,6 +127,15 @@ const player = {
     x: 20,
     y: 200,
     speed: 5,
-    dx: 0, 
+    dx: 0,
     dy: 0
 };
+const drawPlayer = () => {
+    ctx.drawImage(playerImg, player.x, player.y, player.w, player.h);
+}
+
+const Update = () => {
+    drawPlayer();
+};
+
+Update();
