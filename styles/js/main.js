@@ -83,63 +83,49 @@ const ctx = canvas.getContext('2d');
 
 // Animation 1
 
-const Circle = {
-    x: 200,
+// const Circle = {
+//     x: 200,
+//     y: 200,
+//     size: 30,
+//     dx: 5,
+//     dy: 4
+// }
+
+// const drawCircle = () => {
+//     ctx.beginPath();
+//     ctx.arc(Circle.x, Circle.y, Circle.size, 0, Math.PI * 2);
+//     ctx.fillStyle = 'orange';
+//     ctx.fill();
+// }
+// const Update = () => {
+//     ctx.clearRect(0, 0, canvas.width, canvas.height);
+//     drawCircle();
+
+//     Circle.x += Circle.dx;
+//     Circle.y += Circle.dy;
+
+//     if (Circle.x + Circle.size > canvas.width || Circle.x - Circle.size < 0) {
+//         Circle.dx *= -1;
+//     }
+
+
+//     if (Circle.y + Circle.size > canvas.height || Circle.y - Circle.size < 0) {
+//         Circle.dy *= -1;
+//     }
+
+//     requestAnimationFrame(Update);
+// }
+
+// Update();
+
+// Animation 2 Character movement
+
+const player = {
+    w: 50,
+    h: 70,
+    x: 20,
     y: 200,
-    size: 30,
-    dx: 5,
-    dy: 4
-}
-
-const drawCircle = () => {
-    ctx.beginPath();
-    ctx.arc(Circle.x, Circle.y, Circle.size, 0, Math.PI * 2);
-    ctx.fillStyle = 'orange';
-    ctx.fill();
-}
-
-const drawCircle2 = () => {
-    ctx.beginPath();
-    ctx.arc(Circle.x, Circle.y, Circle.size, 0, Math.PI * 2);
-    ctx.fillStyle = 'red';
-    ctx.fill();
-}
-const Update = () => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawCircle();
-
-    Circle.x += Circle.dx;
-    Circle.y += Circle.dy;
-
-    if (Circle.x + Circle.size > canvas.width || Circle.x - Circle.size < 0) {
-        Circle.dx *= -1;
-    }
-
-
-    if (Circle.y + Circle.size > canvas.height || Circle.y - Circle.size < 0) {
-        Circle.dy *= -1;
-    }
-
-    requestAnimationFrame(Update);
-}
-const Updat2 = () => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawCircle2();;
-
-    Circle.x += Circle.dx;
-    Circle.y += Circle.dy;
-
-    if (Circle.x + Circle.size > canvas.width || Circle.x - Circle.size < 0) {
-        Circle.dx *= -1;
-    }
-
-
-    if (Circle.y + Circle.size > canvas.height || Circle.y - Circle.size < 0) {
-        Circle.dy *= -1;
-    }
-
-    requestAnimationFrame(Update);
-}
-
-Update();
-Updat2();
+    speed: 5,
+    dx: 0, 
+    dy: 0
+};
